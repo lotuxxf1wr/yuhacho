@@ -1,0 +1,317 @@
+html, body {
+  font-size: 20px;
+  font-family: Helvetica;
+  color: black;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -webkit-text-stroke: 0.02em;
+  -moz-text-stroke: 0.02em;
+  -o-text-stroke: 0.02em;
+  -ms-text-stroke: 0.02em;
+  text-stroke: 0.02em;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.projects-section {
+  position: relative;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*cursor section*/
+
+.area-l {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 990;
+  cursor: w-resize;
+}
+
+.area-r {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 990;
+  cursor: e-resize;
+}
+
+.block {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+figure {
+  position: relative;
+  display: block;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+img.lazy {
+  opacity: 0;
+}
+
+img.initial,
+img.loaded,
+img.error {
+  opacity: 1;
+}
+
+img:not([src]) {
+  visibility: hidden;
+}
+
+figcaption {
+  position: absolute;
+  width: 100%;
+  padding: 16px 24px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
+  bottom: 0;
+  left: 0;
+  font-family: "itc-american-typewriter", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  text-align: left;
+  opacity: 0;
+}
+
+figcaption.show {
+  opacity: 1;
+}
+
+figcaption p {
+  margin: 0;
+}
+
+.block-type-doubleimage {
+  display: flex;
+}
+
+.block-type-doubleimage > figure {
+  width: 50%;
+}
+
+a:link, a:link p, a:visited, a:visited p {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover, a:hover p, a:active, a:active p, .bio-link:hover {
+  color: rgb(134, 21, 67);
+  cursor: pointer;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 16px 24px;
+  z-index: 999;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+header p {
+  margin: 0;
+}
+
+h1{
+  margin: 16px 24px;
+  font-size: 20px;
+  font-family: Helvetica;
+  font-weight: 400;
+}
+
+h1 span:hover {
+  color: rgb(134, 21, 67);
+}
+
+h2 {
+  margin: 0px 24px;
+  padding-top: 40px;
+  padding-bottom: 18px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+h3 {
+  margin: 0px 60px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.about-detail {
+  padding-top: 35px;
+}
+
+.about-margin {
+  margin-top: -5px;
+}
+
+.header-main-navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+  .header-main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul{
+    list-style: none;
+  }
+  
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+  }
+  
+  header.header-main .header-main-layout .header-main-nav li{
+    display: flex;
+    position: relative;
+  }
+  
+  /* 쉼표 추가 스타일 */
+  .header-main-nav li:nth-child(1) a::after, /* 첫 번째 항목 (Brand Identity) */
+  .header-main-nav li:nth-child(2) a::after { /* 두 번째 항목 (Editorial) */
+    content: ","; /* 쉼표 추가 */
+    margin-right: 0.25em; /* 오른쪽 여백 설정 */
+  }
+  
+  /* 마지막 항목 (Visual Direction)에는 쉼표 제거 */
+  .header-main-nav li:nth-child(3) a::after {
+    content: ""; /* 빈 문자열로 쉼표 제거 */
+  }
+
+.about {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  pointer-events: none;
+  overflow-y: auto;
+}
+
+.about p {
+  margin: 16px 24px;
+}
+
+.about.show {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.close {
+  position: absolute;
+  cursor: pointers;
+}
+
+.footer {
+  font-size: 20px;
+  align-items: flex-end;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  display: flex;
+  position: absolute;
+  z-index: 999;
+  padding: 16px 24px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 800px) {
+
+  header {
+    text-align: center;
+    padding: 0;
+  }
+
+
+  .block-type-doubleimage {
+    display: block;
+  }
+
+  .block-type-doubleimage > figure {
+    width: 100%;
+    height: 100%;
+  }
+
+  figcaption {
+    padding: 4vh 5vw;
+    padding-bottom: calc(4vh + env(safe-area-inset-bottom));
+  }
+
+  .footer {
+    padding: 4vh 5vw;
+    padding-bottom: calc(4vh + env(safe-area-inset-bottom));
+  }
+
+  .biography {
+    padding: 15vw 5vw 5vw 5vw;
+  }
+
+  .close {
+    position: absolute;
+    width: calc(100% - 10vw);
+    text-align: center;
+    top: calc(5vw);
+    font-size: 30px;
+  }
+
+  .h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+  }
+
+}
+
+::selection{
+  color: rgb(134, 21, 67);
+}
